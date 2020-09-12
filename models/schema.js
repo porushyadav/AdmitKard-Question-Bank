@@ -1,27 +1,24 @@
-const mongoose=require('mongoose');
+const mongoose = require("mongoose");
 
-const Schema= new mongoose.Schema({
-   description:{
-       type:String,
-       require:true
-   },
-   category:{
-       type:String,
-       require:true
-   },
-   duedate:{
-       type:String,
-       required:true
-   },
-   check:{
-       type:Boolean,
-       required:true
+const Schema = new mongoose.Schema(
+  {
+    query: {
+      type: String,
+      require: true,
+    },
+    topic: {
+      type: String,
+      require: true,
+    },
+    tags: {
+      type: [],
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-   }
-
-
-
-});
-
-const TodoList=mongoose.model('TodoList',Schema);
-module.exports=TodoList;
+const QuestionBank = mongoose.model("QuestionBank", Schema);
+module.exports = QuestionBank;

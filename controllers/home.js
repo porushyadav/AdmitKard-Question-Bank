@@ -1,24 +1,8 @@
-const todoList=require('../models/schema');
+const todoList = require("../models/schema");
 
 //exract data from the database
-module.exports.home=function(req,res){
-
-    todoList.find({},function(err,todoList)
-    {
-             if(err)
-             {
-                 console.log("error found");
-                 return;
-             }
-
-             return res.render('home',{
-                title:"todolist",
-                todo_List:todoList
-            })
-
-
-    });
-
-
-
-}
+module.exports.home = function (req, res) {
+  return res.render("home", {
+    page_name: "home",
+  });
+};

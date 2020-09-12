@@ -1,38 +1,32 @@
+const message = document.getElementById("success");
+const button = document.getElementById("addTask");
+const query = document.getElementById("query");
+const topic = document.getElementById("topic");
+const tag = document.getElementById("tag");
 
-const target=document.querySelector('form');
-const date=document.getElementsByClassName('date-display');
-const randomColor=document.getElementsByClassName('random');
-//conveting date to month format
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const color=["Blue ", "Green", "Red", "Orange", "Violet", "Indigo",
- "Yellow ","Aquamarine","DarkOliveGreen","DarkRed","LightBlue"];
-for(let i of date)
-{
-   d=i.innerText;
-   i.innerText=months[d.substring(5,7)-1]+" "+d.substring(8)+","+d.substring(0,4);
-}
-//handle color of button
-for(let i of randomColor)
-{
-    let k=Math.floor(Math.random(color.length)*(months.length-1));
-    
-    i.style.backgroundColor =color[k];
-    i.style.color="white";
+//show notification on click the question
 
+button.addEventListener("click", function (e) {
+  //verifying data at front end for showing notification
+  if (
+    query.value.trim().length == 0 ||
+    topic.value.trim().length == 0 ||
+    tag.value.trim().length == 0
+  ) {
+    message.innerHTML = "Invalid Input";
+    message.classList.add("error");
+    message.classList.add("alert");
+    setTimeout(function () {
+      message.remove();
+    }, 3000);
+  } else {
+    message.innerHTML = "Question have been added";
+    message.classList.add("alert");
+    message.classList.add("alert-success");
+    setTimeout(function () {
+      message.remove();
+    }, 3000);
+  }
 
-}
-
-
-//handle text-decoration of label when checkbox is checked
-document.addEventListener('click',function(e)
-{
-   if(e.target.className=="checkbox")
-      {
-        e.target.parentElement.parentElement.classList.toggle("toggle");
-
-      }
-
-
-
+  console.log(query.value);
 });
-

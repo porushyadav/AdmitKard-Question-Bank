@@ -1,95 +1,78 @@
-.heading
-{
-    text-align: center;
-    color: black;
+.heading {
+  text-align: center;
+  color: black;
 }
-hr{
-    background-color: white;
+hr {
+  background-color: white;
 }
-form
-{
-     width:80%;
-     margin: auto;
+form {
+  width: 80%;
+  margin: auto;
 }
-.display
-{
-     display: flex;
-     width:80%;
-     flex-wrap: wrap;
-     justify-content: space-around;
-     margin: auto;
-     margin-top: 50px;
+.display {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 50px;
 }
-.center
-{
-    margin:auto;
-    width: 20%;
-    
+.center {
+  margin: auto;
+  width: 20%;
 }
 
-#addTask
-{
-    width: 20%;
-    min-width:200px;
-    padding: 10px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
-
+#addTask {
+  width: 20%;
+  min-width: 200px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
 }
-#addTask span
-{
-    font-size: 20px;
+#addTask span {
+  font-size: 20px;
 }
-.icon
-{
-    color: white;
-    font-size: 10px;
-
+.icon {
+  color: white;
+  font-size: 10px;
 }
-.padding
-{
-    background-color:whitesmoke;
-    padding: 20px;
+.padding {
+  background-color: whitesmoke;
+  padding: 20px;
 }
 
-.task-info
-{
-    display: inline-block;
-    width:45%;
+.task-info {
+  display: inline-block;
+  width: 45%;
 }
-.task-info-delete
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: red;
+.task-info-delete {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: red;
 }
-button,i
-{
-    cursor: pointer;
+button,
+i {
+  cursor: pointer;
 }
-a{
-    background-color: red;
-    color:red;
-    text-decoration: line-through;
+a {
+  color: red;
+  text-decoration: line-through;
 }
 
-
-#multiple-delete
-{
-    display: flex;
-    justify-content: flex-end;
-    
+#multiple-delete {
+  display: flex;
+  justify-content: flex-end;
 }
-.toggle
-{
-    text-decoration: line-through;
-
+.toggle {
+  text-decoration: line-through;
 }
 
+.task-info-checked input:checked + label {
+  text-decoration: line-through;
+}
 
-.task-info-checked input:checked+label
-{
-    text-decoration: line-through;
+.error {
+  background-color: red;
 }

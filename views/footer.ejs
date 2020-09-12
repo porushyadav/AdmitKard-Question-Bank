@@ -1,44 +1,4 @@
 <footer>
-      <!-- used to delete multiple task and show multiple tasks-->
-    <form action="/delete/multiple-delete" method="get">
-        <div id="multiple-delete">
-        <button  class="btn btn-danger"  style="height:70px; width:200"type="submit">Multiple Delete Button</button>
-      </div>
-          <%for(let i of todo_List){%>
-            <hr>
-            <div class="display">
-                  
-                  <div class="task-info">
-                  
-                    <div class="task-info-checked">
-                       
-                        <input type="checkbox" id="<%=i._id%>" name="checkbox" class="checkbox" value="<%=i._id%>" >                                                                    
-                        <label for="<%=i._id%>"> <%=i.description%></label><br>
-                        
-                    
-           
-                    </div>  
-                    
-                    <div class="date">
-                        <i class="far fa-calendar-alt"></i> <span class="date-display"><%=i.duedate%></span>
-                          
-                    </div>
-                
-                  </div>
-                  <div class="task-info">
-                        <div class="task-info-delete">
-                          <button type="button" class="btn random"><%=i.category%></button>
-                          <a href="delete/?id=<%=i._id%>"><i class="far fa-trash-alt fa-3x" style="color:red"></i></a>
-                      </div>
-                  </div>
-                  
-
-            </div>
-          <%}%>
-      </form>
+  
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<Script src="./js/index.js"></Script>

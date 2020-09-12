@@ -1,26 +1,37 @@
+const QuestionBank = require("../models/schema");
 
-const TodoList=require('../models/schema');
+module.exports.create = function (req, res) {
+  //used to store data in database
+  let query = req.body.query.trim();
+  let topic = req.body.topic.trim();
+  let tags = req.body.tag.trim();
+  if (tags.length == 0) {
+    return res.redirect("back");
+  }
+  tags = tags.split(",");
+  //to remove space form front and back
+  tags = tags.map((s) => s.trim());
 
-module.exports.create=function(req,res)
-{
-    //used to store data in database
-    TodoList.create({
+  //verifying data if it is valid input or not
+  if (query.length == 0 || topic.length == 0) {
+    return res.redirect("back");
+  }
+  console.log(tags);
 
-        description:req.body.description,
-        category:req.body.category,
-        duedate:req.body.duedate,
-        check:false
-
-
-    },function(err,Todo)
+  //creating into the database
+  QuestionBank.create(
     {
-           if(err)
-           {
-               console.log('error in creating a todo');
-               return ;
-           }
-           console.log('*******',Todo);
-           return res.redirect('back');
-  
-    });
-}
+      query: query,
+      topic: topic,
+      tags: tags,
+    },
+    function (err, question) {
+      if (err) {
+        console.log("error in creating a quesion");
+        return;
+      }
+
+      return res.redirect("back");
+    }
+  );
+};

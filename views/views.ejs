@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/view.css" />
+<!--showing search field -->
+
+<nav class="navbar">
+  <form class="form-inline" action="/views/search" method="POST">
+    <input
+      class="form-control"
+      type="text"
+      id="size"
+      placeholder="Search"
+      aria-label="Search"
+      name="search"
+    />
+
+    <button type="submit" class="btn btn-info">Search</button>
+  </form>
+</nav>
+<!--showing all the question present in question bank -->
+
+<div class="row">
+  <%if(Question_bank.length==0){%>
+  <div><h1>Not found</h1></div>
+  <%}%> <%for(let question of Question_bank){%>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><%=question.query%></p>
+        <h5 class="card-title"><%=question.topic%></h5>
+        <%for(let tag of question.tags){%>
+        <button class="btn btn-primary"><%=tag%></button>
+        <%}%>
+        <div style="float: right">
+          <a href="views/delete/?id=<%=question.id%>"
+            ><i class="far fa-trash-alt fa-2x" style="color: red"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%}%>
+</div>
